@@ -16,9 +16,9 @@ class CreateDetailsTable extends Migration
         Schema::create('details', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('product_id');
-            $table->integer('price');
-            $table->binary('image');
-            $table->string('description');
+            $table->bigInteger('price');
+            $table->string('image');
+            $table->longText('description');
 
             $table->foreign('product_id')->references('id')->on('products')->onUpdate('cascade')->onDelete('cascade');
 
