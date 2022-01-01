@@ -15,10 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// all access
+// all users access
 Route::get('/', [ProductController::class, 'all']);
 Route::get('/details/{Product:id}', [ProductController::class, 'details']);
 
-// guest access
+// guests access
 Route::get('/login', [AuthController::class, 'loginPage'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
+
+// authenticated users access
+Route::group(['middleware' => ['auth']], function() {
+    Route::get('/logout', [AuthController::class, 'logout']);
+});
