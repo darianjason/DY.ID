@@ -27,7 +27,7 @@
                     </p>
                 </div>
 
-                <button class="button-details">More Details</button>
+                <a href="/details/{{ $product->id }}"> <button class="button-details">More Details</button> </a>
             </div>
         @endforeach
     </div>

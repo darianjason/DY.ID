@@ -17,4 +17,11 @@ class ProductController extends Controller
 
         return view('index', compact('categories', 'products', 'details'));
     }
+
+    public function details($id) {
+        $categories = Category::all();
+        $productFind = Product::find($id);
+
+        return view('details', compact('categories', 'productFind'));
+    }
 }
