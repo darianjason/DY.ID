@@ -16,20 +16,20 @@ class UserSeeder extends Seeder
     {   
         // dummy data
         $names = ['Admin', 'Joe'];
-        $emails = ['admin@example.com', 'joe@mama.com'];
-        $passwords = ['admin', 'mama'];
+        $emails = ['admin@example.com', 'joe@example.com'];
+        $passwords = [bcrypt('test'), bcrypt('1234')];
+        $roles = ['member', 'admin'];
         $genders = ['Male', 'Female'];
         $addresses = ['123 Street', 'Joe Street'];
-        $roles = [1, 2];
 
         for ($i = 0; $i < count($names); $i++) {
             User::create([
                 'name' => $names[$i],
                 'email' => $emails[$i],
                 'password' => $passwords[$i],
+                'role' => $roles[$i],
                 'gender' => $genders[$i],
-                'address' => $addresses[$i],
-                'role_id' => $roles[$i]
+                'address' => $addresses[$i]
             ]);
         }
     }
