@@ -8,8 +8,8 @@
 
     <title>@yield('title')</title>
 
-    <link rel="stylesheet" href="../../css/reset.css">
-    <link rel="stylesheet" href="../../css/app.css">
+    <link rel="stylesheet" href="{{ URL::asset('stylesheets/reset.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('stylesheets/main.css') }}">
 </head>
 
 <body>
