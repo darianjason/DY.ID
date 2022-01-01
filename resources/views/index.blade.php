@@ -30,5 +30,9 @@
                 <a href="/details/{{ $product->id }}"> <button class="button-details">More Details</button> </a>
             </div>
         @endforeach
+
+        <div>
+            {{ $products->withQueryString()->links() }}
+        </div>
     </div>
 @endsection
