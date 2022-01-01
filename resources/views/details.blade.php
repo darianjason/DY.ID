@@ -1,20 +1,18 @@
 @extends('templates.master')
 
-@section('title', 'DY.ID')
+@section('title', 'Product Details - DY.ID')
 
 @section('content')
-    <h2>Products Details</h2>
+    <div id="product-details">
+        <h3>{{ $product->name }}</h3>
 
-    <div>
-        <h3> {{$productFind->name}} </h3>
         <h4>Category:</h4>
-        {{$productFind->category->name}}
+        <p>{{ $product->category->name }}</p>
+
         <h4>Price:</h4>
-        {{$productFind->detail->price}}
+        <p>{{ $product->detail->price }}</p>
+
         <h4>Description:</h4>
-        {{$productFind->detail->description}}
-
+        <p>{{ $product->detail->description }}</p>
     </div>
-
-
 @endsection

@@ -23,7 +23,7 @@
                     </p>
 
                     <p id="category">
-                        {{ $product->category->category }}
+                        {{ $product->category->name }}
                     </p>
                 </div>
 
