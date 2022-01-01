@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,5 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// all access
 Route::get('/', [ProductController::class, 'all']);
 Route::get('/details/{Product:id}', [ProductController::class, 'details']);
+
+// guest access
+Route::get('/login', [AuthController::class, 'loginPage'])->name('login');
+Route::post('/login', [AuthController::class, 'login']);
