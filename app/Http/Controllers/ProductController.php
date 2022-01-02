@@ -44,6 +44,54 @@ class ProductController extends Controller
         return view('products', compact('categories', 'products', 'details'));
     }
 
+    public function insertProductPage()
+    {
+        $categories = Category::all();
+
+        return view('add-product', compact('categories'));
+    }
+
+    public function insertProduct(Request $request)
+    {
+        $rules = [
+            'name' => 'required|unique:products|min:5',
+            'description' => 'required|min:50',
+            'price' => 'required|numeric|min:0',
+            'category' => 'required',
+            'image' => 'required|image|mimes:jpg'
+        ];
+
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+            return back()->withErrors($validator, 'insert');
+        }
+
+        $product = new Product();
+
+        $product->name = $request->name;
+        $product->category_id = $request->category;
+        
+        $product->save();
+
+        $detail = new Detail();
+
+        $detail->product_id = $product->id;
+        $detail->description = $request->description;
+        $detail->price = $request->price;
+
+        $file = $request->file('image');
+        $fileName = time() . '-' . $file->getClientOriginalName();
+        
+        Storage::putFileAs('public/images', $file, $fileName);
+
+        $detail->image = 'images/' . $fileName;
+
+        $detail->save();
+
+        return redirect('/');
+    }
+
     public function updateProductPage($id)
     {
         $categories = Category::all();

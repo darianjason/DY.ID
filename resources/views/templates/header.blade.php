@@ -24,7 +24,7 @@
                         </li>
 
                         <li>
-                            <a href="/add-product">Add Product</a>
+                            <a href="/products/add">Add Product</a>
                         </li>
                     </ul>
 
