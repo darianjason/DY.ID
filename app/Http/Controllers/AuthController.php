@@ -11,12 +11,7 @@ class AuthController extends Controller
     public function loginPage()
     {
         if (Auth::check()) {
-            if (Auth::user()->role == 'admin') {
-                return redirect('/manage');
-            }
-            else if (Auth::user()->role == 'member') {
-                return redirect('/');
-            }
+            return redirect('/');
         }
     
         return view('login');
@@ -38,11 +33,7 @@ class AuthController extends Controller
                 Cookie::queue(Cookie::forget('passwordCookie'));
             }
 
-            if (Auth::user()->role == 'admin') {
-                return redirect('/manage');
-            } else if (Auth::user()->role == 'member') {
-                return redirect('/');
-            }
+            return redirect('/');
         }
 
         return back()->withErrors('Wrong email or password', 'login');
