@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 // all users access
 Route::get('/', [ProductController::class, 'all']);
-Route::get('/product/{id}', [ProductController::class, 'details']);
+Route::get('/product/{id}', [ProductController::class, 'product']);
 Route::get('/search', [ProductController::class, 'search']);
 
 // guests access

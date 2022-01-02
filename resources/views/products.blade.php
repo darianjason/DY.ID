@@ -26,11 +26,11 @@
                     <td>{{ $product->detail->price }}</td>
                     <td>{{ $product->category->name }}</td>
                     <td>
-                        <a href="/edit/{{ $product->id }}"> 
+                        <a href="/products/edit/{{ $product->id }}"> 
                             <button id="button-update">Update</button>
                         </a>
 
-                        <form action="/view-products/{{ $product->id }}" method="POST">
+                        <form action="/products/{{ $product->id }}" method="POST">
                             @method("DELETE")
                             @csrf
 

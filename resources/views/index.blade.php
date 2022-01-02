@@ -9,12 +9,13 @@
         @foreach ($products as $product)
             <div class="product">
                 <div class="image-container">
-                    <a href="/details/{{ $product->id }}">
-                        <img src="" alt="">
+                    <a href="/product/{{ $product->id }}">
+                        {{-- <img src="{{ Storage::url($request->$image) }}" alt="{{ $product->name }}"> --}}
                     </a>
                 </div>
+
                 <div id="details">
-                    <a id="name" href="/details/{{ $product->id }}">
+                    <a id="name" href="/product/{{ $product->id }}">
                         {{ $product->name }}
                     </a>
 
@@ -27,7 +28,9 @@
                     </p>
                 </div>
 
-                <a href="/details/{{ $product->id }}"> <button class="button-details">More Details</button> </a>
+                <a href="/product/{{ $product->id }}">
+                    <button class="button-details">More Details</button>
+                </a>
             </div>
         @endforeach
 

@@ -25,12 +25,12 @@ class ProductController extends Controller
         return view('index', compact('products'));
     }
 
-    public function details($id)
+    public function product($id)
     {
         $categories = Category::all();
         $product = Product::find($id);
 
-        return view('details', compact('categories', 'product'));
+        return view('product', compact('categories', 'product'));
     }
 
     public function viewProducts()
@@ -39,6 +39,6 @@ class ProductController extends Controller
         $products = Product::all();
         $details = Detail::all();
 
-        return view('view-products', compact('categories', 'products', 'details'));
+        return view('products', compact('categories', 'products', 'details'));
     }
 }
