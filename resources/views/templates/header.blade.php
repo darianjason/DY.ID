@@ -32,11 +32,11 @@
                         Manage Categories
 
                         <li>
-                            <a href="/view-categories">View Categories</a>
+                            <a href="/categories">View Categories</a>
                         </li>
 
                         <li>
-                            <a href="/add-category">Add Category</a>
+                            <a href="/categories/add">Add Category</a>
                         </li>
                     </ul>
                 @endif
