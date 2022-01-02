@@ -34,6 +34,8 @@ Route::group(['middleware' => ['auth']], function() {
     // admins access
     Route::group(['middleware' => ['security']], function() {
         Route::get('/products', [ProductController::class, 'viewProducts']);
+        Route::get('/products/edit/{id}', [ProductController::class, 'updateProductPage']);
+        Route::patch('/products/{id}', [ProductController::class, 'updateProduct']);
         Route::delete('/products/{id}', [ProductController::class, 'deleteProduct']);
     });
 });
