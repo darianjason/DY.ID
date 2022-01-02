@@ -18,7 +18,7 @@ class UserSeeder extends Seeder
         $names = ['Admin', 'Joe'];
         $emails = ['admin@example.com', 'joe@example.com'];
         $passwords = [bcrypt('test'), bcrypt('1234')];
-        $roles = ['member', 'admin'];
+        $roles = ['admin', 'member'];
         $genders = ['Male', 'Female'];
         $addresses = ['123 Street', 'Joe Street'];
 
