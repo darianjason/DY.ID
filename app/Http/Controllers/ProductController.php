@@ -96,9 +96,8 @@ class ProductController extends Controller
     {
         $categories = Category::all();
         $product = Product::find($id);
-        $details = Detail::all();
 
-        return view('edit-product', compact('categories', 'product', 'details'));
+        return view('edit-product', compact('categories', 'product'));
     }
 
     public function updateProduct(Request $request, $id)
@@ -118,7 +117,7 @@ class ProductController extends Controller
         }
 
         $product = Product::find($id);
-        $detail = Detail::find($id);
+        $detail = Product::find($id)->detail;
 
         $product->name = $request->name;
         $detail->description = $request->description;
@@ -127,9 +126,9 @@ class ProductController extends Controller
 
         $file = $request->file('image');
         if (isset($file)) {
-            $fileName = time() . $file->getClientOriginalName();
+            $fileName = time() . '-' . $file->getClientOriginalName();
             
-            Storage::delete('public/' . $product->image);
+            Storage::delete('public/' . $product->detail->image);
             Storage::putFileAs('public/images', $file, $fileName);
 
             $detail->image = 'images/' . $fileName;
@@ -146,7 +145,7 @@ class ProductController extends Controller
         $product = Product::find($id);
 
         if (isset($product)) {
-            Storage::delete('public' . $product->image);
+            Storage::delete('public/' . $product->detail->image);
             $product->delete();
         }
 
