@@ -41,4 +41,16 @@ class ProductController extends Controller
 
         return view('products', compact('categories', 'products', 'details'));
     }
+
+    public function deleteProduct($id)
+    {
+        $product = Product::find($id);
+
+        if (isset($product)) {
+            Storage::delete('public' . $product->image);
+            $product->delete();
+        }
+
+        return redirect('/products');
+    }
 }
