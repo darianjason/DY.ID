@@ -5,7 +5,7 @@
 @section('content')
     <div id="product-details">
         <div>
-            {{-- <img src="{{ Storage::url($request->$image) }}" alt="{{ $product->name }}"> --}}
+            <img src="{{ Storage::url($product->detail->image) }}" alt="{{ $product->name }}">
         </div>
 
         <div id="details-right">

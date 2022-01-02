@@ -1,11 +1,11 @@
 @extends('templates.master')
 
-@section('title', 'Register - DY.ID')
+@section('title', 'Register')
 
 @section('content')
     <h2>Register</h2>
 
-    <form action="register" method="POST" id="register-form">
+    <form action="register" enctype="multipart/form-data" method="POST" id="register-form">
         @csrf
 
         <div>
@@ -21,7 +21,7 @@
                     <input type="radio" name="gender" value="Male" id="male">
                     <label for="male">Male</label>
                 </div>
-                
+
                 <div>
                     <input type="radio" name="gender" value="Female" id="female">
                     <label for="male">Female</label>
@@ -56,12 +56,14 @@
             </div>
         </div>
 
-        <input type="submit" value="Register" id="register-button">
+        <button type="submit">Register</button>
     </form>
 
-    <label for="error" class="error-label">
-        @if ($errors->hasBag('register'))
-            {{ $errors->register->first() }}
-        @endif
-    </label>
+    @if ($errors->hasBag('register'))
+        <div class="error-wrapper">
+            <label for="error" class="error-label">
+                {{ $errors->register->first() }}
+            </label>
+        </div>
+    @endif
 @endsection

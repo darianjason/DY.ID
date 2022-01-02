@@ -20,7 +20,9 @@
             @foreach ($products as $product)
                 <tr>
                     <td>{{ $product->id }}</td>
-                    <td>{{ $product->detail->image }}</td> {{-- temporary --}}
+                    <td>
+                        <img src="{{ Storage::url($product->detail->image) }}" alt="{{ $product->name }}">
+                    </td>
                     <td>{{ $product->name }}</td>
                     <td>{{ $product->detail->description }}</td>
                     <td>{{ $product->detail->price }}</td>
@@ -30,11 +32,11 @@
                             <button id="button-update">Update</button>
                         </a>
 
-                        <form action="/products/{{ $product->id }}" method="POST">
-                            @method("DELETE")
+                        <form action="/products/{{ $product->id }}" enctype="multipart/form-data" method="POST">
+                            @method('DELETE')
                             @csrf
 
-                            <input type="submit" value="Delete">
+                            <button type="submit">Delete</button>
                         </form>
                     </td>
                 </tr>

@@ -6,6 +6,41 @@
             <li>
                 <a href="/">Home</a>
             </li>
+            @auth
+                @if (Auth::user()->role == 'member')
+                    <li>
+                        <a href="/cart">My Cart</a>
+                    </li>
+
+                    <li>
+                        <a href="/transactions">Transaction History</a>
+                    </li>
+                @elseif (Auth::user()->role == 'admin')
+                    <ul class="dropdown">
+                        Manage Products
+
+                        <li>
+                            <a href="/products">View Products</a>
+                        </li>
+
+                        <li>
+                            <a href="/add-product">Add Product</a>
+                        </li>
+                    </ul>
+
+                    <ul class="dropdown">
+                        Manage Categories
+
+                        <li>
+                            <a href="/view-categories">View Categories</a>
+                        </li>
+
+                        <li>
+                            <a href="/add-category">Add Category</a>
+                        </li>
+                    </ul>
+                @endif
+            @endauth
         </ul>
 
         <form action="/search" method="GET">

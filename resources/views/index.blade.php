@@ -10,7 +10,7 @@
             <div class="product">
                 <div class="image-container">
                     <a href="/product/{{ $product->id }}">
-                        {{-- <img src="{{ Storage::url($request->$image) }}" alt="{{ $product->name }}"> --}}
+                        <img src="{{ Storage::url($product->detail->image) }}" alt="{{ $product->name }}">
                     </a>
                 </div>
 
