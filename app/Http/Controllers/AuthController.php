@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
@@ -33,6 +34,8 @@ class AuthController extends Controller
                 Cookie::queue(Cookie::forget('passwordCookie'));
             }
 
+            Session::put('userSession', Auth::user());
+
             return redirect('/');
         }
 
@@ -42,6 +45,7 @@ class AuthController extends Controller
     public function logout()
     {
         Auth::logout();
+        Session::forget('userSession');
 
         return redirect('/login');
     }
