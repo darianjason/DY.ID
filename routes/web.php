@@ -23,6 +23,8 @@ Route::get('/search', [ProductController::class, 'search']);
 // guests access
 Route::get('/login', [AuthController::class, 'loginPage'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
+Route::get('/register', [UserController::class, 'registerPage']);
+Route::post('/register', [UserController::class, 'register']);
 
 // authenticated users access
 Route::group(['middleware' => ['auth']], function() {
