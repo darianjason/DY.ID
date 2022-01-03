@@ -56,7 +56,7 @@ class ProductController extends Controller
         $rules = [
             'name' => 'required|unique:products|min:5',
             'description' => 'required|min:50',
-            'price' => 'required|numeric|min:0',
+            'price' => 'required|numeric|gt:0',
             'category' => 'required',
             'image' => 'required|image|mimes:jpg'
         ];
@@ -89,7 +89,7 @@ class ProductController extends Controller
 
         $detail->save();
 
-        return redirect('/');
+        return redirect('/products');
     }
 
     public function updateProductPage($id)

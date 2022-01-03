@@ -1,9 +1,9 @@
 @extends('templates.master')
 
-@section('title', 'View Products')
+@section('title', 'Products')
 
 @section('content')
-    <h2>View Products</h2>
+    <h2>Manage Products</h2>
 
     <table>
         <thead>

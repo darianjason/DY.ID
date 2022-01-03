@@ -25,7 +25,7 @@
         </div>
 
         <div>
-            <label for="product-category">Category</label>
+            <label for="product-category">Product Category</label>
             <select name="category" id="product-category">
                 <option selected disabled>Select</option>
                 @foreach ($categories as $category)
@@ -37,7 +37,7 @@
         </div>
 
         <div>
-            <label for="product-image">Image</label>
+            <label for="product-image">Product Image</label>
             <input type="file" name="image" id="product-image">
         </div>
 
