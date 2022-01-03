@@ -10,7 +10,7 @@
 
     <link rel="stylesheet" href="{{ URL::asset('stylesheets/reset.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('stylesheets/main.css') }}">
-    @yield('css');
+    @yield('css')
 </head>
 
 <body>
