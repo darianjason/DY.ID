@@ -34,7 +34,7 @@ class AuthController extends Controller
                 Cookie::queue(Cookie::forget('passwordCookie'));
             }
 
-            Session::put('userSession', Auth::user());
+            Session::put('userID', Auth::user()->id);
 
             return redirect('/');
         }
