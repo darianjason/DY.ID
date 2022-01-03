@@ -5,6 +5,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\TransactionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,6 +38,8 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/cart/edit/{id}', [CartController::class, 'editProductPage']);
     Route::patch('/cart/{id}', [CartController::class, 'editProduct']);
     Route::delete('/cart/{id}', [CartController::class, 'removeProduct']);
+    Route::post('/cart', [TransactionController::class, 'checkout']);
+    Route::get('/transactions', [TransactionController::class, 'transactions']);
 
     // admin access
     Route::group(['middleware' => ['security']], function() {

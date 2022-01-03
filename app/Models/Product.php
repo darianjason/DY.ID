@@ -23,4 +23,9 @@ class Product extends Model
     {
         return $this->belongsToMany(User::class, 'carts', 'product_id', 'user_id')->withPivot('quantity');
     }
+
+    public function transactionDetails()
+    {
+        return $this->belongsToMany(Transaction::class, 'transaction_details', 'product_id', 'transaction_id')->withPivot('quantity', 'subtotal');
+    }
 }
