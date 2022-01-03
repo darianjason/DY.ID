@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,6 +32,11 @@ Route::post('/register', [UserController::class, 'register']);
 // authenticated user access
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/logout', [AuthController::class, 'logout']);
+    Route::post('/product/{id}', [CartController::class, 'addToCart']);
+    Route::get('/cart', [CartController::class, 'cart']);
+    Route::get('/cart/edit/{id}', [CartController::class, 'editProductPage']);
+    Route::patch('/cart/{id}', [CartController::class, 'editProduct']);
+    Route::delete('/cart/{id}', [CartController::class, 'removeProduct']);
 
     // admin access
     Route::group(['middleware' => ['security']], function() {
