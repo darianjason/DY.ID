@@ -37,8 +37,6 @@ class TransactionController extends Controller
                 'quantity' => $user->cart()->find($product->id)->pivot->quantity,
                 'subtotal' => $product->detail->price * $user->cart()->find($product->id)->pivot->quantity
             ]);
-
-            // $user->transactions()->attach($product->id, ['quantity' => $user->cart()->find($product->id)->pivot->quantity]);
         }
 
         $total = 0;
