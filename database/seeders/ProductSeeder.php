@@ -15,8 +15,8 @@ class ProductSeeder extends Seeder
     public function run()
     {
         // dummy data
-        $names = ['TV 1', 'TV 2', 'TV 3', 'Phone 1', 'Phone 2', 'Phone 3', 'Laptop 1', 'Laptop 2', 'Laptop 3'];
-        $categories = [1, 1, 1, 2, 2, 2, 3, 3, 3];
+        $names = ['Samsung 85” The Frame QLED 4K Smart TV', 'LG C1 83” 4K Smart OLED TV', 'iPhone 13 Pro', 'Google Pixel 6 Pro', 'Nvidia GeForce RTX 3080', 'AMD Radeon RX 6900 XT', 'Lenovo Legion 7', 'MacBook Pro 16" M1 Max'];
+        $categories = [1, 1, 2, 2, 3, 3, 4, 4];
 
         for ($i = 0; $i < count($names); $i++) {
             Product::create([

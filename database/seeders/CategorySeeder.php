@@ -15,7 +15,7 @@ class CategorySeeder extends Seeder
     public function run()
     {
         // dummy data
-        $categories = ['Television', 'Smartphone', 'Laptop'];
+        $categories = ['Television', 'Smartphone', 'Graphics Card', 'Laptop'];
 
         for ($i = 0; $i < count($categories); $i++) {
             Category::create([

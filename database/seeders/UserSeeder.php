@@ -17,7 +17,7 @@ class UserSeeder extends Seeder
         // dummy data
         $names = ['Admin', 'Joe'];
         $emails = ['admin@example.com', 'joe@example.com'];
-        $passwords = [bcrypt('test'), bcrypt('1234')];
+        $passwords = [bcrypt('admin'), bcrypt('test')];
         $roles = ['admin', 'member'];
         $genders = ['Male', 'Female'];
         $addresses = ['123 Street', 'Joe Street'];
