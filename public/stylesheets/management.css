@@ -1,0 +1,37 @@
+h2 {
+    padding-bottom: 2rem;
+}
+
+table, th, td {
+    border: 1px solid white;
+}
+
+th {
+    font-weight: bold;
+    text-align: left;
+    padding: 0.5rem;
+    background-color: #B9D3F3;
+    color: #212130;
+}
+
+tr:nth-child(even) {
+    background-color: #323249;
+}
+
+td {
+    text-align: left;
+    vertical-align: top;
+    padding: 0.5rem;
+}
+
+img {
+    max-height: 16rem;
+}
+
+.button-group {
+    display: flex;
+}
+
+.button-group a {
+    margin-right: 0.5rem;
+}

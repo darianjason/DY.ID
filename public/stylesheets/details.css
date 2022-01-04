@@ -1,0 +1,53 @@
+#product-details {
+    background-color: #323249;
+    display: flex;
+    border-radius: 0.25rem;
+    height: 48rem;
+}
+
+img {
+    width: 50%;
+    object-fit: contain;
+    border-radius: 0.25rem;
+    background-color: white;
+}
+
+#details-right {
+    padding: 2rem;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+#details-right h3 {
+    font-size: 2rem;
+}
+
+#details-right div {
+    margin: 1rem 0;
+}
+
+#details-right h4 {
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding-bottom: 0.5em;
+    color: #B9D3F3;
+    display: flex;
+    align-items: center;
+}
+
+#details-right h4 span {
+    padding-right: 0.5rem;
+}
+
+#details-right p {
+    line-height: 1.25em;
+}
+
+#details-right form {
+    margin-top: 1rem;    
+}
+
+#details-right form input {
+    border-radius: 0.25rem;
+    margin: 0 0.5rem
+}

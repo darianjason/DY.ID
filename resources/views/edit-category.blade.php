@@ -2,6 +2,10 @@
 
 @section('title', 'Edit Category')
 
+@section('css')
+    <link rel="stylesheet" href="{{ URL::asset('stylesheets/form.css') }}">
+@endsection
+
 @section('content')
     <h2>Edit Category</h2>
 
@@ -18,8 +22,11 @@
     </form>
 
     @if ($errors->hasBag('update'))
-        <div class="error-wrapper">
+        <div class="error-container">
             <label for="error" class="error-label">
+                <span class="material-icons-round">
+                    warning
+                </span>
                 {{ $errors->update->first() }}
             </label>
         </div>

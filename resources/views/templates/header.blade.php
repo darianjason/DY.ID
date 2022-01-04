@@ -1,5 +1,7 @@
 <header>
-    <h1>DY.ID</h1>
+    <h1>
+        <a href="/">DY.ID</a>
+    </h1>
 
     <nav>
         <ul class="menu-left">
@@ -16,36 +18,42 @@
                         <a href="/transactions">Transaction History</a>
                     </li>
                 @elseif (Auth::user()->role == 'admin')
-                    <ul class="dropdown">
+                    <li class="dropdown">
                         Manage Products
+                        <ul class="dropdown-list">
+                            <li>
+                                <a href="/products">View Products</a>
+                            </li>
+    
+                            <li>
+                                <a href="/products/add">Add Product</a>
+                            </li>
+                        </ul>
+                    </li>
 
-                        <li>
-                            <a href="/products">View Products</a>
-                        </li>
-
-                        <li>
-                            <a href="/products/add">Add Product</a>
-                        </li>
-                    </ul>
-
-                    <ul class="dropdown">
+                    <li class="dropdown">
                         Manage Categories
-
-                        <li>
-                            <a href="/categories">View Categories</a>
-                        </li>
-
-                        <li>
-                            <a href="/categories/add">Add Category</a>
-                        </li>
-                    </ul>
+                        <ul class="dropdown-list">
+                            <li>
+                                <a href="/categories">View Categories</a>
+                            </li>
+    
+                            <li>
+                                <a href="/categories/add">Add Category</a>
+                            </li>
+                        </ul>
+                    </li>
                 @endif
             @endauth
         </ul>
 
-        <form action="/search" method="GET">
+        <form action="/search" method="GET" id="search-bar">
             <input type="search" name="search" placeholder="Search for products" aria-label="Search">
-            <button type="submit">Search</button>
+            <button type="submit">
+                <span class="material-icons-round">
+                    search
+                </span>
+            </button>
         </form>
 
         <ul class="menu-right">

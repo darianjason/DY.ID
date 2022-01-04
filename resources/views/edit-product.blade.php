@@ -2,10 +2,14 @@
 
 @section('title', 'Edit Product')
 
+@section('css')
+    <link rel="stylesheet" href="{{ URL::asset('stylesheets/form.css') }}">
+@endsection
+
 @section('content')
     <h2>Edit Product</h2>
 
-    <form action="/products/{{ $product->id }}" enctype="multipart/form-data" method="POST" id="edit-product-form">
+    <form action="/products/{{ $product->id }}" enctype="multipart/form-data" method="POST" id="edit-product-form" class="form">
         @method('PATCH')
         @csrf
 
@@ -45,8 +49,11 @@
     </form>
 
     @if ($errors->hasBag('update'))
-        <div class="error-wrapper">
+        <div class="error-container">
             <label for="error" class="error-label">
+                <span class="material-icons-round">
+                    warning
+                </span>
                 {{ $errors->update->first() }}
             </label>
         </div>

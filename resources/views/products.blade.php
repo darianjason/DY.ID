@@ -2,6 +2,10 @@
 
 @section('title', 'Products')
 
+@section('css')
+    <link rel="stylesheet" href="{{ URL::asset('stylesheets/management.css') }}">
+@endsection
+
 @section('content')
     <h2>Manage Products</h2>
 
@@ -28,16 +32,18 @@
                     <td>{{ $product->detail->price }}</td>
                     <td>{{ $product->category->name }}</td>
                     <td>
-                        <a href="/products/edit/{{ $product->id }}"> 
-                            <button id="button-update">Update</button>
-                        </a>
-
-                        <form action="/products/{{ $product->id }}" enctype="multipart/form-data" method="POST">
-                            @method('DELETE')
-                            @csrf
-
-                            <button type="submit">Delete</button>
-                        </form>
+                        <div class="button-group">
+                            <a href="/products/edit/{{ $product->id }}"> 
+                                <button id="button-update">Update</button>
+                            </a>
+    
+                            <form action="/products/{{ $product->id }}" enctype="multipart/form-data" method="POST">
+                                @method('DELETE')
+                                @csrf
+    
+                                <button type="submit">Delete</button>
+                            </form>
+                        </div>
                     </td>
                 </tr>
             @endforeach

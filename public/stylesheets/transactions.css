@@ -1,0 +1,57 @@
+h2 {
+    padding-bottom: 2rem;
+}
+
+.transaction-container {
+    background-color: #323249;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.transaction-date {
+    align-self: flex-start;
+    padding-bottom: 1rem;
+}
+
+.transaction-item {
+    background-color: #212130;
+    display: flex;
+    border-radius: 0.25rem;
+    height: 8rem;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+img {
+    width: 25%;
+    object-fit: contain;
+    border-radius: 0.25rem;
+    background-color: white;
+}
+
+.details-right {
+    width: 75%;
+    padding: 1rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+}
+
+.details-right p {
+    font-size: 1rem;
+    padding: 0.25rem 0;
+}
+
+.subtotal {
+    justify-self: flex-end;
+    align-self: flex-end;
+}
+
+.total-price {
+    align-self: flex-end;
+    font-weight: bold;
+}

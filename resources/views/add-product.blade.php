@@ -2,10 +2,14 @@
 
 @section('title', 'Add Product')
 
+@section('css')
+    <link rel="stylesheet" href="{{ URL::asset('stylesheets/form.css') }}">
+@endsection
+
 @section('content')
     <h2>Add New Product</h2>
 
-    <form action="/products" enctype="multipart/form-data" method="POST" id="add-product-form">
+    <form action="/products" enctype="multipart/form-data" method="POST" id="add-product-form" class="form">
         @csrf
 
         <div>
@@ -44,8 +48,11 @@
     </form>
 
     @if ($errors->hasBag('insert'))
-        <div class="error-wrapper">
+        <div class="error-container">
             <label for="error" class="error-label">
+                <span class="material-icons-round">
+                    warning
+                </span>
                 {{ $errors->insert->first() }}
             </label>
         </div>

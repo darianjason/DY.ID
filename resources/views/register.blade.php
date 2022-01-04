@@ -2,10 +2,14 @@
 
 @section('title', 'Register')
 
+@section('css')
+    <link rel="stylesheet" href="{{ URL::asset('stylesheets/form.css') }}">
+@endsection
+
 @section('content')
     <h2>Register</h2>
 
-    <form action="register" enctype="multipart/form-data" method="POST" id="register-form">
+    <form action="register" enctype="multipart/form-data" method="POST" id="register-form" class="form">
         @csrf
 
         <div>
@@ -49,19 +53,20 @@
             <input type="password" name="password-confirm" id="password-confirm">
         </div>
 
-        <div id="agreement-field">
-            <div class="checkbox-input">
-                <input type="checkbox" name="agreement" id="agreement">
-                <label for="agreement">I agree with the terms & conditions</label>
-            </div>
+        <div class="checkbox-field">
+            <input type="checkbox" name="agreement" id="agreement" class="checkbox-input">
+            <label for="agreement">I agree with the terms & conditions</label>
         </div>
 
         <button type="submit">Register</button>
     </form>
 
     @if ($errors->hasBag('register'))
-        <div class="error-wrapper">
+        <div class="error-container">
             <label for="error" class="error-label">
+                <span class="material-icons-round">
+                    warning
+                </span>
                 {{ $errors->register->first() }}
             </label>
         </div>

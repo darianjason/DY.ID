@@ -2,10 +2,14 @@
 
 @section('title', 'Log In')
 
+@section('css')
+    <link rel="stylesheet" href="{{ URL::asset('stylesheets/form.css') }}">
+@endsection
+
 @section('content')
     <h2>Log In</h2>
 
-    <form action="login" enctype="multipart/form-data" method="POST" id="login-form">
+    <form action="login" enctype="multipart/form-data" method="POST" id="login-form" class="form">
         @csrf
 
         <div>
@@ -18,8 +22,8 @@
             <input type="password" name="password" id="password" value="{{ Cookie::get('passwordCookie') != null ? Cookie::get('passwordCookie') : '' }}">
         </div>
             
-        <div id="remember-field">
-            <input type="checkbox" name="remember" id="remember" {{ Cookie::get('emailCookie') != null ? 'checked' : '' }}>
+        <div class="checkbox-field">
+            <input type="checkbox" name="remember" id="remember" class="checkbox-input" {{ Cookie::get('emailCookie') != null ? 'checked' : '' }}>
             <label for="remember">Remember Me</label>
         </div>
 
@@ -27,8 +31,11 @@
     </form>
 
     @if ($errors->hasBag('login'))
-        <div class="error-wrapper">
+        <div class="error-container">
             <label for="error" class="error-label">
+                <span class="material-icons-round">
+                    warning
+                </span>
                 {{ $errors->login->first() }}
             </label>
         </div>
