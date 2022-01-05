@@ -1,3 +1,7 @@
+h2 {
+    padding-bottom: 2rem;
+}
+
 .cart-item {
     background-color: #323249;
     display: flex;
