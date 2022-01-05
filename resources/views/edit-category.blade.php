@@ -9,7 +9,7 @@
 @section('content')
     <h2>Edit Category</h2>
 
-    <form action="/categories/{{ $category->id }}" enctype="multipart/form-data" method="POST" id="edit-product-form">
+    <form action="/categories/{{ $category->id }}" enctype="multipart/form-data" method="POST" id="edit-product-form" class="form">
         @method('PATCH')
         @csrf
 
