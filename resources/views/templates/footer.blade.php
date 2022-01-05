@@ -2,7 +2,7 @@
     <p>&copy; DY.ID 2021</p>
 
     <div>
-        <a href="https://goo.gl/maps/A9zfLx9wpjrTFLXc8">
+        <a href="https://goo.gl/maps/A9zfLx9wpjrTFLXc8" target="_blank">
             <span class="material-icons-round">
                 place
             </span>
@@ -14,7 +14,7 @@
             </span>
         </a>
 
-        <a href="mailto:contact@dy.id">
+        <a href="mailto:contact@dy.id" target="_blank">
             <span class="material-icons-round">
                 mail
             </span>
